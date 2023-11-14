@@ -1,0 +1,22 @@
+import random
+
+
+def BrainCells(years,delta):
+  numOfBrainCells = 10000
+  for i in range(years):
+    if numOfBrainCells > 0:
+      numOfBrainCells -= random.randrange(0,delta+1)
+    else:
+      return False, numOfBrainCells
+  return True, numOfBrainCells
+
+def alive():
+  years = int(input("How many years will your simulation run? Enter as an integer: "))
+  delta = int(input("How much do you want the number of brain cells to change within each year? Enter as an integer: "))
+  if BrainCells(years,delta) == True:
+    print("???? Vidhat has brain cells?!?!?! errrrrr")
+  else:
+    print("wowow everything is normal and vidhat does not have braincells! phew")
+  return(BrainCells(years,delta))
+  
+print(alive())
