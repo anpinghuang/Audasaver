@@ -1,10 +1,12 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import React from 'react'; // import react 
+import { View, Text, Button, StyleSheet } from 'react-native'; // import react modules
 
-const BrainCells = (years, delta) => {
+// BRAINcells function
+
+const BrainCells = (years, delta) => { 
   let numOfBrainCells = 10000;
 
-  for (let i = 0; i < years; i++) {
+  for (let i = 0; i < years; i++) { // the function
     if (numOfBrainCells > 0) {
       numOfBrainCells -= Math.random() * (delta + 1);
     } else {
@@ -17,38 +19,45 @@ const BrainCells = (years, delta) => {
   return true;
 };
 
-const alive = () => {
-  const years = parseInt(prompt('How many years will your simulation run? Enter as an integer: '));
-  const delta = parseInt(prompt('How much do you want the number of brain cells to change within each year? Enter as an integer: '));
+//// ALIVE function 
 
-  if (BrainCells(years, delta) === true) {
+const alive = () => {
+  const years = parseInt(prompt('How many years will your simulation run? Enter as an integer: ')); // asks question & store in variable
+  const delta = parseInt(prompt('How much do you want the number of brain cells to change within each year? Enter as an integer: ')); // asks question & store in variable
+
+  if (BrainCells(years, delta) === true) { // if the function "braincells" returns true
     console.log('???? Vidhat has brain cells?!?!?! errrrrr');
   } else {
-    console.log('wowow everything is normal and vidhat does not have braincells! phew');
+    console.log('wowow everything is normal and vidhat does not have braincells! phew'); // if braincells return false
   }
 };
+
+
+// MAIN app (uses the functions above 
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Brain Cells Simulator</Text>
-      <Button title="Run Simulation" onPress={alive} />
+      <Text style={styles.title}>Brain Cells Simulator</Text> {/* This creates a title */}
+      <Button title="UR MOM" onPress={alive} />  {/* Creates button that triggers "alive" function */}
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ /// CSS stuff
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff', // set background color to white
+    alignItems: 'center', // align all items in the container to center
+    justifyContent: 'center', // center stuff more
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 20,
+    fontSize: 24, // set font size for title
+    fontWeight: 'bold', // make font bold
+    marginBottom: 20, // 20 away from bottom
   },
 });
 
 export default App;
+
+
