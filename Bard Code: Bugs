@@ -1,5 +1,5 @@
 import React from 'react'; // import react 
-import { View, Text, Button, StyleSheet } from 'react-native'; // import react modules
+import { View, Text, Button, StyleSheet, usePrompt} from 'react-native'; // import react modules
 
 // BRAINcells function
 
@@ -38,8 +38,8 @@ const alive = () => {
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Brain Cells Simulator</Text> {/* This creates a title */}
-      <Button title="UR MOM" onPress={alive} />  {/* Creates button that triggers "alive" function */}
+      <Text style={styles.title}>Brain Cells Simulator</Text> 
+      <Button title="SUSSUUSUSUSUUSUSUSU" onPress={alive} /> 
     </View>
   );
 };
